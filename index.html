@@ -13,53 +13,92 @@
     </head>
     <body>
       <header>
-        <h1></h1>
-        <h1></h1>
-          <p></p>
+      <!-- authentication forms and messaging -->
+        <div class="form-fields">
+        <p id="message"></p>
+        <form id= "sign-up"> New to this game? Sign up to save your stats!
+          <input name="credentials[email]" type="email" placeholder= "Your email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <button type="submit">Sign up!</button>
+        </form>
+        <form id= "sign-in"> Already signed up? Access your stats and play a new game!
+          <input name="credentials[email]" type="email" placeholder= "Your email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <button type="submit">Sign in!</button>
+        <form id="change-password"> Want to change your password?
+          <input name="passwords[old]" type="password" placeholder="Old password">
+          <input name="passwords[new]" type="password" placeholder="New password">
+          <button type="submit">Change Password!</button>
+        </form>
+        </form>
+        <form id= "sign-out">
+          <button type="submit">Sign out!</button>
+        </form>
+      </div>
+      <!-- end of authentication forms and messaging -->
+
+        <h1>Tic-Tac-'Rona!'</h1>
+        <h1 id="rulesHeading">How to Play</h1>
+          <p>In a classic game of tic-tac-toe, players take turns marking up a game board with X's or O's. The goal is to have three of your matching marks in a row, in order to win against the opposing player. Let's see what you've got against the Novel Coronavirus!</p>
       </header>
       <main>
-        <div class="gameboard">
-          <div id="topLeft">
+        <!-- Here is the game board! -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">This is Top 1
+            <button type="submit" id="topLeft">
 
-          </div>
+            </div>
 
-          <div id="topMid">
+            <div class="col-md-4">This is Top 2
 
-          </div>
+            </div>
 
-          <div id="topRight">
+            <div class="col-md-4">This is Top 3
 
-          </div>
-
-          <div id="midLeft">
-
-          </div>
-
-          <div id="midMid">
-
-          </div>
-
-          <div id="midRight">
-
-          </div>
-
-          <div id="bottomLeft">
-
-          </div>
-
-          <div id="bottomMiddle">
-
-          </div>
-
-          <div id="bottomRight">
-
+            </div>
           </div>
         </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">This is Middle 1
+
+            </div>
+
+            <div class="col-md-4">This is Middle 2
+
+            </div>
+
+            <div class="col-md-4">This is Middle 3
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">This is Bottom 1
+
+            </div>
+
+            <div class="col-md-4">This is Bottom 2
+
+            </div>
+
+            <div class="col-md-4">This is Bottom 3
+
+            </div>
+          </div>
+        </div>
+      <!-- Game board ends here -->
         <div class="content">
           <p> </p>
-          <button type="submit"> </button>
+          <!-- reset button will need to refresh game -->
+          <button type="reset">Play Again!</button>
         </div>
 
       </main>
+
     </body>
 </html>
