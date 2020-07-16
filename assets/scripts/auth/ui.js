@@ -17,16 +17,16 @@ const signInSuccess = function (response) {
   $('#unauthenticated').hide()
 }
 const signInFailure = function () {
-  $('#message').text('Sign in failed.')
+  $('#message').text('Sign-in failed.')
 }
 const changePasswordFailure = function() {
-  $('#message').text('failed')
+  $('#message').text('Password change failed')
 }
 const changePasswordSuccess = function(response) {
-  $('#message').text('Change success!')
+  $('#message').text('Successfully changed your password!')
 }
 const signOutSuccess = function () {
-  $('#message').text('Signed you out!')
+  $('#message').text('You are now signed out!')
   $('#unauthenticated').show()
   $('#authenticated').hide()
 
