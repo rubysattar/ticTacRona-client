@@ -1,4 +1,7 @@
-//NEW CONTENT HERE 
+//NEW CONTENT HERE
+[first wireframe](https://imgur.com/SzdphYP)
+[initial planning process](https://imgur.com/2V6stZa)
+
 
 ## Structure
 
