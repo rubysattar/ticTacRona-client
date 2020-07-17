@@ -1,5 +1,5 @@
 'use strict'
-const store = require ('../store')
+
 
 
 const signUpSuccess = function (response) {
@@ -12,7 +12,7 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   $('#message').text('Sign-in was successful!')
-  store.user = response.user
+  
   $('#authenticated').show()
   $('#unauthenticated').hide()
 }

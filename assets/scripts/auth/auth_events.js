@@ -2,6 +2,8 @@
 const api = require('./auth_api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./auth_ui')
+const gameApi = require('../game/game_api')
+const store = require('../store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -16,7 +18,13 @@ const onSignIn = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   api.signIn(formData)
+    .then((response) => {
+      console.log({response})
+      store.user = response.user
+    })
     .then(ui.signInSuccess)
+  // the game should be created here
+    // .then(gameApi.createNewGame)
     .catch(ui.signInFailure)
 }
 const onChangePassword = function (event) {
