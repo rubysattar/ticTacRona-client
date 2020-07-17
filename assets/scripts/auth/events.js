@@ -20,10 +20,7 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .then(gameEvents.onDisplayGame)
     //Do I want the game to start/display here? Should the startGame/displayGame function be referenced here?
-    .catch((error)=>{
-      console.error(error)
-      ui.signInFailure
-    })
+    .catch(ui.signInFailure)
 }
 const onChangePassword = function (event) {
   event.preventDefault()
@@ -37,10 +34,7 @@ const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
-    .catch((error)=>{
-      console.error(error)
-      ui.signOutFailure
-    })
+    .catch(ui.signOutFailure)
 }
 module.exports = {
   onSignUp,

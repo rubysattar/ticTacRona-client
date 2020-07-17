@@ -14,7 +14,6 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  // game listeners
-  //$('document').ready(gameEvents.onDisplayGame)
-  //$('#reset').on('click', gameEvents.onCreateGame)
+
+  $('document').ready(gameEvents.onDisplayGame)
 })
