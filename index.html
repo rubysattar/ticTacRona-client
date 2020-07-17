@@ -14,31 +14,31 @@
     <body>
       <header>
       <!-- authentication forms and messaging -->
-      <p id="message"></p>
-      <div id="unauthenticated">
-        <form id= "sign-up"> New to this game? Sign up to save your stats!
-          <input name="credentials[email]" type="email" placeholder= "Your email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-          <button type="submit">Sign up!</button>
-        </form>
-        <form id= "sign-in"> Already signed up? Access your stats and play a new game!
-          <input name="credentials[email]" type="email" placeholder= "Your email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <button type="submit">Sign in!</button>
-        <form id="change-password"> Want to change your password?
-          <input name="passwords[old]" type="password" placeholder="Old password">
-          <input name="passwords[new]" type="password" placeholder="New password">
-          <button type="submit">Change Password!</button>
-        </form>
-      </div>
+        <p id="message"></p>
+        <div id="unauthenticated">
+          <form id= "sign-up"> New to this game? Sign up to save your stats!
+            <input name="credentials[email]" type="email" placeholder= "Your email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+            <button type="submit">Sign up!</button>
+          </form>
+          <form id= "sign-in"> Already signed up? Access your stats and play a new game!
+            <input name="credentials[email]" type="email" placeholder= "Your email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <button type="submit">Sign in!</button>
+          <form id="change-password"> Want to change your password?
+            <input name="passwords[old]" type="password" placeholder="Old password">
+            <input name="passwords[new]" type="password" placeholder="New password">
+            <button type="submit">Change Password!</button>
+          </form>
+        </div>
 
-      <div id="authenticated">
-        </form>
-        <form id= "sign-out">
-          <button type="submit">Sign out!</button>
-        </form>
-      </div>
+        <div id="authenticated">
+          <form id= "sign-out">
+            <button type="submit">Sign out!</button>
+          </form>
+        </div>
+          <p id="game-message"> </p>
       </header>
       <!-- end of authentication forms and messaging -->
       <div class="intro">
@@ -48,18 +48,19 @@
       </div>
       <main>
         <!-- Here is the game board! -->
+      <div id="theGame">
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">This is Top 1
-            <button type="submit" id="topLeft">
+            <div class="col-4 col-sm-4">This is Top 1
+
 
             </div>
 
-            <div class="col-sm-4">This is Top 2
+            <div class="col-4 col-sm-4">This is Top 2
 
             </div>
 
-            <div class="col-sm-4">This is Top 3
+            <div class="col-4 col-sm-4">This is Top 3
 
             </div>
           </div>
@@ -67,15 +68,15 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">This is Middle 1
+            <div class="col-4 col-sm-4">This is Middle 1
 
             </div>
 
-            <div class="col-sm-4">This is Middle 2
+            <div class="col-4 col-sm-4">This is Middle 2
 
             </div>
 
-            <div class="col-sm-4">This is Middle 3
+            <div class="col-4 col-sm-4">This is Middle 3
 
             </div>
           </div>
@@ -83,27 +84,26 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-md-4">This is Bottom 1
+            <div class="col-4 col-sm-4">This is Bottom 1
 
             </div>
 
-            <div class="col-md-4">This is Bottom 2
+            <div class="col-4 col-sm-4">This is Bottom 2
 
             </div>
 
-            <div class="col-md-4">This is Bottom 3
+            <div class="col-4 col-sm-4">This is Bottom 3
 
             </div>
           </div>
         </div>
       <!-- Game board ends here -->
         <div class="content">
-          <p> </p>
           <!-- reset button will need to refresh game -->
-          <button type="reset">Play Again!</button>
+          <button id="reset" type="reset">Play Again!</button>
         </div>
-
-      </main>
+      </div>
+    </main>
 
     </body>
 </html>
