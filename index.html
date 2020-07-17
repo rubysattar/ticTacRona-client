@@ -48,7 +48,32 @@
       </div>
       <main>
         <!-- Here is the game board! -->
-      <div id="theGame">
+<table id= "tic-tac-toe">
+    <div class="container">
+      <div class="row">
+        <div class= "col-4 col-sm-4"> <button data-row="0" data-column="0">0,0</button></div>
+        <div class="col-4 col-sm-4"><button data-row="0" data-column="1">0,1</button></div>
+        <div class="col-4 col-sm-4"><button data-row="0" data-column="2">0,2</button></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class= "col-4 col-sm-4"> <button data-row="1" data-column="0">1,0</button></div>
+        <div class="col-4 col-sm-4"><button data-row="1" data-column="1">1,1</button></div>
+        <div class="col-4 col-sm-4"><button data-row="1" data-column="2">1,2</button></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class= "col-4 col-sm-4"> <button data-row="2" data-column="0">2,0</button></div>
+        <div class="col-4 col-sm-4"><button data-row="2" data-column="1">2,1</button></div>
+        <div class="col-4 col-sm-4"><button data-row="2" data-column="2">2,2</button></div>
+      </div>
+    </div>
+</table>
+
+
+      <!-- <div id="theGame">
         <div class="container">
           <div class="row">
             <div class="col-4 col-sm-4">This is Top 1
@@ -64,7 +89,7 @@
 
             </div>
           </div>
-        </div>
+
 
         <div class="container">
           <div class="row">
@@ -96,13 +121,12 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
       <!-- Game board ends here -->
         <div class="content">
           <!-- reset button will need to refresh game -->
-          <button id="reset" type="reset">Play Again!</button>
+          <button id="reset" type="reset">New Game!</button>
         </div>
-      </div>
     </main>
 
     </body>
