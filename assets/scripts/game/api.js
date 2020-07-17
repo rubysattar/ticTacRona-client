@@ -3,7 +3,6 @@ const config = require ('../config')
 const store = require ('../store')
 
 const displayGame = function () {
-  console.log(store)
   return $.ajax({
     headers: {
       Authorization: 'Bearer '+ store.user.game.createdAt
