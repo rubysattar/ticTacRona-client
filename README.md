@@ -8,7 +8,7 @@ As a player, I want to pick whether I am 'x' or 'o' (or an image) so that I can 
 
 ## My wireframes
 [First wireframe](https://imgur.com/tH0a56P)
-
+[Second wireframe](https://imgur.com/bRA88R0)
 
 ## My planning, development story, problem-solving strategies
 [informal planning outline](https://imgur.com/FHhiRQS)
