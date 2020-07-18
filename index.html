@@ -14,31 +14,31 @@
     <body>
       <header>
       <!-- authentication forms and messaging -->
-      <p id="message"></p>
-      <div id="unauthenticated">
-        <form id= "sign-up"> New to this game? Sign up to save your stats!
-          <input name="credentials[email]" type="email" placeholder= "Your email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-          <button type="submit">Sign up!</button>
-        </form>
-        <form id= "sign-in"> Already signed up? Access your stats and play a new game!
-          <input name="credentials[email]" type="email" placeholder= "Your email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <button type="submit">Sign in!</button>
-        </form>
-      </div>
-      <div id="authenticated"><div id="authenticated"><div id="authenticated"></div>
-        <form id="change-password"> Want to change your password?
-          <input name="passwords[old]" type="password" placeholder="Old password">
-          <input name="passwords[new]" type="password" placeholder="New password">
-          <button type="submit">Change Password!</button>
-        </form>
+        <p id="message"></p>
+        <div id="unauthenticated">
+          <form id= "sign-up"> New to this game? Sign up to save your stats!
+            <input name="credentials[email]" type="email" placeholder= "Your email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+            <button type="submit">Sign up!</button>
+          </form>
+          <form id= "sign-in"> Already signed up? Access your stats and play a new game!
+            <input name="credentials[email]" type="email" placeholder= "Your email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <button type="submit">Sign in!</button>
+          </form>
+        </div>
+        <div id="authenticated"><div id="authenticated"><div id="authenticated"></div>
+          <form id="change-password"> Want to change your password?
+            <input name="passwords[old]" type="password" placeholder="Old password">
+            <input name="passwords[new]" type="password" placeholder="New password">
+            <button type="submit">Change Password!</button>
+          </form>
 
-        <form id= "sign-out">
-          <button type="submit">Sign out!</button>
-        </form>
-      </div>
+          <form id= "sign-out">
+            <button type="submit">Sign out!</button>
+          </form>
+        </div>
       </header>
       <!-- end of authentication forms and messaging -->
       <div class="intro">
@@ -50,49 +50,42 @@
         <!-- Here is the game board! -->
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">This is Top 1
-            <button type="submit" id="topLeft">
-
+            <div class="col-sm-4" id="t1" data-cell-index='0'>This is data-cell-index 0
+              <button data-box="t1"></button>
             </div>
-
-            <div class="col-sm-4">This is Top 2
-
+            <div class="col-sm-4" id="t2" data-cell-index='1'>This is data-cell-index 1
+              <button data-box="t2"></button>
             </div>
-
-            <div class="col-sm-4">This is Top 3
-
+            <div class="col-sm-4" id="t3" data-cell-index='2'>This is data-cell-index 2
+              <button data-box="t3"></button>
             </div>
           </div>
         </div>
 
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">This is Middle 1
-
+            <div class="col-sm-4" id="m1" data-cell-index='3'>This is data-cell-index 3
+              <button data-box="m1"></button>
             </div>
-
-            <div class="col-sm-4">This is Middle 2
-
+            <div class="col-sm-4" id="m2" data-cell-index='4'>This is data-cell-index 4
+              <button data-box="m2"></button>
             </div>
-
-            <div class="col-sm-4">This is Middle 3
-
+            <div class="col-sm-4" id="m3" data-cell-index='5'>This is data-cell-index 5
+              <button data-box="m3"></button>
             </div>
           </div>
         </div>
 
         <div class="container">
           <div class="row">
-            <div class="col-md-4">This is Bottom 1
-
+            <div class="col-sm-4" id="b1" data-cell-index='6'>This is data-cell-index 6
+              <button data-box="b1"></button>
             </div>
-
-            <div class="col-md-4">This is Bottom 2
-
+            <div class="col-sm-4" id="b2" data-cell-index='7'>This is data-cell-index 7
+              <button data-box="b2"></button>
             </div>
-
-            <div class="col-md-4">This is Bottom 3
-
+            <div class="col-sm-4" id="b3" data-cell-index='8'>This is data-cell-index 8
+              <button data-box="b3"></button>
             </div>
           </div>
         </div>

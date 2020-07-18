@@ -23,8 +23,8 @@ const onSignIn = function (event) {
       store.user = response.user
     })
     .then(ui.signInSuccess)
-  // the game should be created here
-    // .then(gameApi.createNewGame)
+  // the game should be created at this point
+    .then(gameApi.createNewGame)
     .catch(ui.signInFailure)
 }
 const onChangePassword = function (event) {

@@ -1,5 +1,26 @@
 //NEW CONTENT HERE 
 
+## My user stories
+As a player, I want to see the rules displayed so that I know how to play.
+As a player, I want several ways to win so that I can strategize.
+As a player, I want to know if I win or lose so that I get closure/know the game is over.
+As a player, I want to pick whether I am 'x' or 'o' (or an image) so that I can make sense of the gameplay.
+
+## My wireframes
+![First wireframe](https://imgur.com/tH0a56P)
+
+
+## My planning, development story, problem-solving strategies
+![informal planning outline](https://imgur.com/FHhiRQS)
+Outlining my plan was the first step for me in the development process. I referenced the project requirements and example tic-tac-toe games available on google searches to inform my outline. When confronted with problems, I read into the console's error messages to locate bugs in my code. This was in tandem with inserting console logs in my code where I suspected errors could be present. I also used curl scripts to rule out whether bugs were front-end or back-end related. 
+
+## My unsolved mysteries
+Right now, I'm having a hard time thinking of how to connect my game board cells to functions that will collectively contribute to a game update stored in the game api (connected to authenticated user data).
+
+## My technologies/languages
+jquery, json, bootstrap, sass, webpack, a pre-built API
+
+//NEW CONTENT ENDS HERE
 ## Structure
 
 ### Scripts
