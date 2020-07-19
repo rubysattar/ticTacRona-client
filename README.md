@@ -6,6 +6,10 @@ As a player, I want several ways to win so that I can strategize.
 As a player, I want to know if I win or lose so that I get closure/know the game is over.
 As a player, I want to pick whether I am 'x' or 'o' (or an image) so that I can make sense of the gameplay.
 
+As a sign-in user, I must be able to start a tic tac-toe game
+When playing as a user, I must start as X and rotate between X and O
+When playing as a user, I want to select available spaces on the board
+
 ## My wireframes
 [First wireframe](https://imgur.com/tH0a56P)
 [Second wireframe](https://imgur.com/bRA88R0)
