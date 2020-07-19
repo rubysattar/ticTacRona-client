@@ -15,7 +15,8 @@ As a player, I want to pick whether I am 'x' or 'o' (or an image) so that I can 
 Outlining my plan was the first step for me in the development process. I referenced to the project requirements and example tic-tac-toe games available on google searches to inform my outline. When confronted with problems, I read into the console's error messages to locate bugs in my code. This was in tandem with inserting console logs in my code where I suspected errors could be present. I also used curl scripts to rule out whether bugs were front-end or back-end related. 
 
 ## My unsolved mysteries
-Right now, I'm having a hard time thinking of how to connect my game board cells to functions that will collectively contribute to a game update stored in the game api (connected to authenticated user data).
+Right now, I'm having a hard time thinking of how to connect my game board cells to functions that will collectively update stored data in the game api (connected to authenticated user data).
+-update: I want the game to start AFTER a user signs in. Trying to solve this. Not sure if every click a user makes needs to be logged into the user's data or just ending game results. 
 
 ## My technologies/languages
 jquery, json, bootstrap, sass, webpack, a pre-built API

@@ -15,6 +15,7 @@ const onReset = function (event) {
   }
 }
 
+//not sure if the following is necessary. not clear exactly what needs to be passed to api
 const logClick(cell) {
   // we want this function to pass the id of the cell that was clicked 
   // to the user's data
