@@ -16,8 +16,12 @@ const signInSuccess = function (response) {
   $('#authenticated').show()
   $('#unauthenticated').hide()
 }
-const signInFailure = function () {
+const signInFailure = function (errorMessage) {
+  if (errorMessage) {
+    $('#message').text(`Sign-in failed. Reason: ${errorMessage}`)
+  } else {
   $('#message').text('Sign-in failed.')
+  }
 }
 const changePasswordFailure = function() {
   $('#message').text('Password change failed')
@@ -29,11 +33,10 @@ const signOutSuccess = function () {
   $('#message').text('You are now signed out!')
   $('#unauthenticated').show()
   $('#authenticated').hide()
-
   store.user = null
 }
 const signOutFailure = function () {
-  $('#message').text('Sign out failed :(')
+
 }
 
 module.exports = {
