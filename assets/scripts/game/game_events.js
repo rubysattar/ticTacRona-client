@@ -4,7 +4,7 @@
 const gameApi = require('./game_api')
 const getFormFields = require('../../../lib/get-form-fields')
 const gameUi = require('./game_ui')
-const { createNewGame } = require('./game_api')
+const store = require('../store')
 
 const cells = document.querySelectorAll('.cell')
 
@@ -33,14 +33,17 @@ const onReset = function (event) {
 
 // not sure if the following is necessary. 
 // not clear exactly what needs to be passed to api
-const logClick = function(cell) {
+const onLogClick = function (cell) {
   // we want this function to pass the id of the cell that was clicked 
   // to the user's data
-  console.log(cell.target.id)
+  store.game += cells.target.id
+  //turn (cells.target.id, gameUi.currentPlayer)
 }
+
+// function turn (cellId, currentPlayer){}
 
 module.exports = {
   onReset,
-  logClick,
+  onLogClick,
   onCreateGame
 }

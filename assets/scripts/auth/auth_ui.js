@@ -1,6 +1,5 @@
 'use strict'
-
-
+const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Sign-up was successful!')
@@ -12,7 +11,6 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   $('#message').text('Sign-in was successful!')
-  
   $('#authenticated').show()
   $('#unauthenticated').hide()
 }
@@ -20,13 +18,13 @@ const signInFailure = function (errorMessage) {
   if (errorMessage) {
     $('#message').text(`Sign-in failed. Reason: ${errorMessage}`)
   } else {
-  $('#message').text('Sign-in failed.')
+    $('#message').text('Sign-in failed.')
   }
 }
-const changePasswordFailure = function() {
+const changePasswordFailure = function () {
   $('#message').text('Password change failed')
 }
-const changePasswordSuccess = function(response) {
+const changePasswordSuccess = function (response) {
   $('#message').text('Successfully changed your password!')
 }
 const signOutSuccess = function () {

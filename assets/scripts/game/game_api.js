@@ -13,7 +13,7 @@ const createNewGame = function () {
     data: {}
   })
 }
-
+const logClick = function () {}
 module.exports = {
   createNewGame
 }
