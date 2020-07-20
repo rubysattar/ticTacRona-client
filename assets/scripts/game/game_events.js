@@ -41,7 +41,8 @@ const onReset = function (event) {
   gameUi.gameBoard = Array.from(Array(9).keys())
   for (let i = 0; i < cells.length; i++) {
     cells[i].innerText = ''
-    cells[i].on('click', logClick)
+    cells[i].on('click' // a function should be here that starts a new game
+    )
   }
 }
 // const symbolHandler = function (cellValue) {
