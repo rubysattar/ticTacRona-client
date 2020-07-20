@@ -17,4 +17,6 @@ $(() => {
 
   // Game listeners
   $('.endGame').on('click', gameEvents.onReset)
+  // $('cell').on('click', gameEvents.onLogMove)
+  $('#updateGame').on('submit', gameEvents.onUpdateGame)
 })
