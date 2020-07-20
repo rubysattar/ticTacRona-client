@@ -32,16 +32,24 @@ const onReset = function (event) {
   }
 }
 const symbolHandler = function (cellValue) {
+  let updatedCellValue;
+
   if (!store.currentSymbol) {
     store.currentSymbol = 'X'
     // console.log(store.currentSymbol)
   }
 
   if (!cellValue) {
-    return store.currentSymbol
-  } else {
-    // console.error('This is an error. reaching line 39')
+    updatedCellValue = store.currentSymbol
+
+    if (store.currentSymbol === 'X') {
+      store.currentSymbol = 'O'
+    } else {
+      store.currentSymbol = 'X'
+    }
   }
+
+  return updatedCellValue
 }
 
 // a function to log every move a player makes
@@ -54,19 +62,21 @@ const onUpdateGameState = function (clickEvent) {
     let cellValue = store.game.cells[cellIndex]
     // come back and check if the game is over
     const gameOver = false
-    console.log(cellValue)
+    // console.log(cellValue)
     const newValue = symbolHandler(cellValue)
     cellValue = newValue
-    console.log({cellValue})
+    // console.log({cellValue})
 
-    gameApi.patchGame(cellIndex, cellValue, gameOver)
-      .then(updatedGame => {
-        console.log('updated game coming back from patch game', updatedGame)
-        store.game = updatedGame
-      })
-      .catch(error => {
-        console.error(error)
-      })
+    if (newValue) {
+      gameApi.patchGame(cellIndex, cellValue, gameOver)
+        .then(updatedGame => {
+          // console.log('updated game coming back from patch game', updatedGame)
+          store.game = updatedGame
+        })
+        .catch(error => {
+          console.error(error)
+        })
+    }
   }
   // const newValue = symbolHandler(cellValue)
   // $(clickEvent.currentTarget).attr('data-cell-value', newValue)
