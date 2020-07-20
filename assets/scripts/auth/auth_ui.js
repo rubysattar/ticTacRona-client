@@ -13,6 +13,7 @@ const signInSuccess = function (response) {
   $('#message').text('Sign-in was successful!')
   $('#authenticated').show()
   $('#unauthenticated').hide()
+  $('#gameBoard').show()
 }
 const signInFailure = function (errorMessage) {
   if (errorMessage) {

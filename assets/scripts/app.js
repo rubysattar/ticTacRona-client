@@ -11,6 +11,7 @@ const gameEvents = require('./game/game_events')
 // Authentication Listeners
 $(() => {
   $('#authenticated').hide()
+  $('#gameBoard').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
