@@ -44,26 +44,26 @@ const onReset = function (event) {
     cells[i].on('click', logClick)
   }
 }
-const symbolHandler = function (cellValue) {
-  let updatedCellValue;
+// const symbolHandler = function (cellValue) {
+//   let updatedCellValue;
 
-  if (!store.currentSymbol) {
-    store.currentSymbol = 'X'
-    // console.log(store.currentSymbol)
-  }
+//   if (!store.currentSymbol) {
+//     store.currentSymbol = 'X'
+//     // console.log(store.currentSymbol)
+//   }
 
-  if (!cellValue) {
-    updatedCellValue = store.currentSymbol
+//   if (!cellValue) {
+//     updatedCellValue = store.currentSymbol
 
-    if (store.currentSymbol === 'X') {
-      store.currentSymbol = 'O'
-    } else {
-      store.currentSymbol = 'X'
-    }
-  }
+//     if (store.currentSymbol === 'X') {
+//       store.currentSymbol = 'O'
+//     } else {
+//       store.currentSymbol = 'X'
+//     }
+//   }
 
-  return updatedCellValue
-}
+//   return updatedCellValue
+// }
 
 // a function to log every move a player makes
 // updateGame should be called every time a move is made
@@ -86,9 +86,6 @@ const onUpdateGameState = function (clickEvent) {
   }
   // const newValue = symbolHandler(cellValue)
   // $(clickEvent.currentTarget).attr('data-cell-value', newValue)
-
-
-
 
 module.exports = {
   onReset,
