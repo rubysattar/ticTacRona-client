@@ -21,12 +21,12 @@ const patchGame = function (index, value, over) {
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     data: {
-      "game": {
-        "cell": {
-          "index": index,
-          "value": value
+      game: {
+        cell: {
+          index: index,
+          value: value
         },
-        "over": over
+        over: over
       }
     }
   })

@@ -6,17 +6,30 @@ const getFormFields = require('../../../lib/get-form-fields')
 const gameUi = require('./game_ui')
 const store = require('../store')
 
+const winningCombos = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [6, 4, 2]
+]
+
 const cells = document.querySelectorAll('.cell')
+
+let turn = true
 
 const onCreateGame = function () {
   gameApi.createNewGame()
   .then(newGame => {
-	console.log({newGame})
+	// console.log({newGame})
   gameUi.gameStartSuccess()
   store.game = newGame.game
   })
   .catch(error => {
-	console.error(error.responseText)
+	// console.error(error.responseText)
 	const errorMessage = error.responseText
 	gameUi.gameStartFailure(errorMessage)
   })
@@ -58,32 +71,28 @@ const symbolHandler = function (cellValue) {
 // and add an 'x' or 'o' to the game object
 const onUpdateGameState = function (clickEvent) {
   const cellIndex = clickEvent.currentTarget.dataset.cellIndex
-  if (store.game) {
-    let cellValue = store.game.cells[cellIndex]
-    // come back and check if the game is over
-    const gameOver = false
-    // console.log(cellValue)
-    const newValue = symbolHandler(cellValue)
-    cellValue = newValue
-    // console.log({cellValue})
-
-    if (newValue) {
-      gameApi.patchGame(cellIndex, cellValue, gameOver)
-        .then(updatedGame => {
-          // console.log('updated game coming back from patch game', updatedGame)
-          store.game = updatedGame
-        })
-        .catch(error => {
-          console.error(error)
-        })
-    }
+  // player is a variable, which holds a ternary operator that changes
+  // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
+  const player = turn ? 'X' : 'O'
+  if (clickEvent.target.innerText === '') {
+  clickEvent.target.innerText = player
+  gameApi.patchGame(cellIndex, player, false)
+    .then()
+    .catch()
+    turn = !turn
+  }
+  // need to come up with game logic for game over
+    return turn
   }
   // const newValue = symbolHandler(cellValue)
   // $(clickEvent.currentTarget).attr('data-cell-value', newValue)
-}
+
+
+
 
 module.exports = {
   onReset,
   onUpdateGameState,
-  onCreateGame
+  onCreateGame,
+  winningCombos
 }
