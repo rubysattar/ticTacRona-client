@@ -30,14 +30,12 @@ const onReset = function (event) {
     cells[i].on('click', logClick)
   }
 }
-
-// not sure if the following is necessary. 
-// not clear exactly what needs to be passed to api
+// a function to log every move a player makes
+// updateGame should be called every time a move is made
+// will store that move in store.data.game
+// and add an 'x' or 'o' to the game object
 const onLogClick = function (cell) {
-  // we want this function to pass the id of the cell that was clicked 
-  // to the user's data
   store.game += cells.target.id
-  //turn (cells.target.id, gameUi.currentPlayer)
 }
 
 // function turn (cellId, currentPlayer){}
