@@ -37,6 +37,8 @@ const onCreateGame = function () {
 }
 
 const onReset = function (event) {
+  // make sure this button doesn't JUST clear the board
+  // it should also post a new game to be tracked
   event.preventDefault()
   document.querySelector('.endGame').getElementsByClassName.display = 'none'
   gameUi.gameBoard = Array.from(Array(9).keys())
@@ -45,26 +47,6 @@ const onReset = function (event) {
     $('#playAgain').on('click', createNewGame)
   }
 }
-// const symbolHandler = function (cellValue) {
-//   let updatedCellValue;
-
-//   if (!store.currentSymbol) {
-//     store.currentSymbol = 'X'
-//     // console.log(store.currentSymbol)
-//   }
-
-//   if (!cellValue) {
-//     updatedCellValue = store.currentSymbol
-
-//     if (store.currentSymbol === 'X') {
-//       store.currentSymbol = 'O'
-//     } else {
-//       store.currentSymbol = 'X'
-//     }
-//   }
-
-//   return updatedCellValue
-// }
 
 // a function to log every move a player makes
 // updateGame should be called every time a move is made
@@ -85,8 +67,6 @@ const onUpdateGameState = function (clickEvent) {
   // need to come up with game logic for game over
     return turn
   }
-  // const newValue = symbolHandler(cellValue)
-  // $(clickEvent.currentTarget).attr('data-cell-value', newValue)
 
 module.exports = {
   onReset,
