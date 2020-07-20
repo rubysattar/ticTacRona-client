@@ -13,7 +13,25 @@ const createNewGame = function () {
     data: {}
   })
 }
-const logClick = function () {}
+const patchGame = function (index, value, over) {
+  return $.ajax({
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    data: {
+      "game": {
+        "cell": {
+          "index": index,
+          "value": value
+        },
+        "over": over
+      }
+    }
+  })
+}
 module.exports = {
-  createNewGame
+  createNewGame,
+  patchGame
 }

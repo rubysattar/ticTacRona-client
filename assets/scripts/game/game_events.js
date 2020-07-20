@@ -12,7 +12,8 @@ const onCreateGame = function () {
   gameApi.createNewGame()
   .then(newGame => {
 	console.log({newGame})
-	gameUi.gameStartSuccess()
+  gameUi.gameStartSuccess()
+  store.game = newGame.game
   })
   .catch(error => {
 	console.error(error.responseText)
@@ -30,18 +31,49 @@ const onReset = function (event) {
     cells[i].on('click', logClick)
   }
 }
-// a function to log every move a player makes
-// updateGame should be called every time a move is made
-// will store that move in store.data.game
-// and add an 'x' or 'o' to the game object
-const onLogClick = function (cell) {
-  store.game += cells.target.id
+const symbolHandler = function (cellValue) {
+  if (!store.currentSymbol) {
+    store.currentSymbol = 'X'
+    // console.log(store.currentSymbol)
+  }
+
+  if (!cellValue) {
+    return store.currentSymbol
+  } else {
+    // console.error('This is an error. reaching line 39')
+  }
 }
 
-// function turn (cellId, currentPlayer){}
+// a function to log every move a player makes
+// updateGame should be called every time a move is made
+// will store that move in store.game
+// and add an 'x' or 'o' to the game object
+const onUpdateGameState = function (clickEvent) {
+  const cellIndex = clickEvent.currentTarget.dataset.cellIndex
+  if (store.game) {
+    let cellValue = store.game.cells[cellIndex]
+    // come back and check if the game is over
+    const gameOver = false
+    console.log(cellValue)
+    const newValue = symbolHandler(cellValue)
+    cellValue = newValue
+    console.log({cellValue})
+
+    gameApi.patchGame(cellIndex, cellValue, gameOver)
+      .then(updatedGame => {
+        console.log('updated game coming back from patch game', updatedGame)
+        store.game = updatedGame
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+  // const newValue = symbolHandler(cellValue)
+  // $(clickEvent.currentTarget).attr('data-cell-value', newValue)
+}
 
 module.exports = {
   onReset,
-  onLogClick,
+  onUpdateGameState,
   onCreateGame
 }
