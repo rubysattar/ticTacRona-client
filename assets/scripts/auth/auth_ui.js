@@ -3,10 +3,12 @@ const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Sign-up was successful!')
+  $('.endGame').hide()
 }
 
 const signUpFailure = function (response) {
   $('#message').text('Sign-up was unsuccessful. Try again.')
+  $('.endGame').hide()
 }
 
 const signInSuccess = function (response) {
@@ -14,6 +16,8 @@ const signInSuccess = function (response) {
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('#gameBoard').show()
+  $('.endGame').show()
+  $('.scoreboard').show()
 }
 const signInFailure = function (errorMessage) {
   if (errorMessage) {
@@ -21,6 +25,7 @@ const signInFailure = function (errorMessage) {
   } else {
     $('#message').text('Sign-in failed.')
   }
+  $('.endGame').hide()
 }
 const changePasswordFailure = function () {
   $('#message').text('Password change failed')
