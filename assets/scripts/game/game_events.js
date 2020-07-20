@@ -5,6 +5,7 @@ const gameApi = require('./game_api')
 const getFormFields = require('../../../lib/get-form-fields')
 const gameUi = require('./game_ui')
 const store = require('../store')
+const { createNewGame } = require('./game_api')
 
 const winningCombos = [
   [0, 1, 2],
@@ -41,8 +42,7 @@ const onReset = function (event) {
   gameUi.gameBoard = Array.from(Array(9).keys())
   for (let i = 0; i < cells.length; i++) {
     cells[i].innerText = ''
-    cells[i].on('click' // a function should be here that starts a new game
-    )
+    $('#playAgain').on('click', createNewGame)
   }
 }
 // const symbolHandler = function (cellValue) {
