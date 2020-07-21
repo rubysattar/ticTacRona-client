@@ -7,8 +7,6 @@ const gameUi = require('./game_ui')
 const store = require('../store')
 const { createNewGame } = require('./game_api')
 
-let gameBoard
-
 // these are the data-cell-indices of winning combinations
 const winningCombos = [
   [0, 1, 2],
