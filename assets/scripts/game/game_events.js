@@ -68,7 +68,7 @@ const onUpdateGameState = function (clickEvent) {
   }
   // need to come up with game logic for game over
 
-  // checkWin function will be called here
+  // checkForWin function will be called here
     const hasWon = checkForWin(player)
 
     return turn
@@ -116,28 +116,43 @@ const checkForWin = function (player) {
 // This is a giant if else statement to check for winner
 
 // const checkWin = function (hasText) {
-//   if ($('.m3').text(hasText) && $('.m1').text(hasText) && $('.m2').text(hasText)) {
-//   return true
-//   } else if ($('.t1').text(hasText) && $('.t2').text(hasText) && $('.t3').text(hasText)) {
-//   return true
-//   } else if ($('.b1').text(hasText) && $('.b2').text(hasText) && $('.b3').text(hasText)) {
-//   return true
-//   } else if ($('.t1').text(hasText) && $('.m1').text(hasText) && $('.b1').text(hasText)) {
-//   return true
-//   } else if ($('.t2').text(hasText) && $('.m2').text(hasText) && $('.b2').text(hasText)) {
-//   return true
-//   } else if ($('.t3').text(hasText) && $('.m3').text(hasText) && $('.b3').text(hasText)) {
-//   return true
-//   } else if ($('.t1').text(hasText) && $('.m2').text(hasText) && $('.b3').text(hasText)) {
-//   return true
-//   } else if ($('.b1').text(hasText) && $('.m2').text(hasText) && $('.t3').text(hasText)) {
+//   if ($('.m3').text(hasText) &&
+//       $('.m1').text(hasText) &&
+//       $('.m2').text(hasText)) {
+// //   return true
+// //   } else if ($('.t1').text(hasText) &&
+//       $('.t2').text(hasText) &&
+//       $('.t3').text(hasText)) {
+// //   return true
+// //   } else if ($('.b1').text(hasText) &&
+//       $('.b2').text(hasText) &&
+//       $('.b3').text(hasText)) {
+// //   return true
+// //   } else if ($('.t1').text(hasText) &&
+//       $('.m1').text(hasText) &&
+//       $('.b1').text(hasText)) {
+// //   return true
+// //   } else if ($('.t2').text(hasText) &&
+//       $('.m2').text(hasText) &&
+//       $('.b2').text(hasText)) {
+// //   return true
+// //   } else if ($('.t3').text(hasText) &&
+//       $('.m3').text(hasText) &&
+//       $('.b3').text(hasText)) {
+// //   return true
+// //   } else if ($('.t1').text(hasText) &&
+//       $('.m2').text(hasText) &&
+//       $('.b3').text(hasText)) {
+// //   return true
+// //   } else if ($('.b1').text(hasText) &&
+//       $('.m2').text(hasText) &&
+//       $('.t3').text(hasText)) {
 //   return true
 //   } else {
 //   return false
 //   }
 // }
 
-// already have winning combos, could instead do a for loop
 
 module.exports = {
   onReset,
