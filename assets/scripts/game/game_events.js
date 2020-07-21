@@ -66,17 +66,25 @@ const onUpdateGameState = function (clickEvent) {
   // player is a variable, which holds a ternary operator that changes
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
+
   if (clickEvent.target.innerText === '') {
     clickEvent.target.innerText = player
-    gameApi.patchGame(cellIndex, player, false)
-      .then()
+
+    // now update the game
+
+    // need to come up with game logic for game over
+
+    // checkForWin function will be called here
+    const hasWon = checkForWin(player)
+
+    gameApi.patchGame(cellIndex, player, hasWon)
+
+      .then(updatedGame => {
+        console.log(updatedGame)
+      })
       .catch()
     turn = !turn
   }
-  // need to come up with game logic for game over
-
-  // checkForWin function will be called here
-    const hasWon = checkForWin(player)
   // There should be an IF statement here that only allows you to change turns
   // if the game is NOT over
   // If the game IS over, then return turn
