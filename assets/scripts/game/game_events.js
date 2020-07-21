@@ -50,6 +50,13 @@ const onReset = function (event) {
   }
 }
 
+const onGameOver = function () {
+  event.preventDefault()
+  gameApi.gameOver()
+    .then()
+    .catch()
+}
+
 // a function to log every move a player makes
 // updateGame should be called every time a move is made
 // will store that move in store.game
@@ -70,7 +77,9 @@ const onUpdateGameState = function (clickEvent) {
 
   // checkForWin function will be called here
     const hasWon = checkForWin(player)
-
+  // There should be an IF statement here that only allows you to change turns
+  // if the game is NOT over
+  // If the game IS over, then return turn
     return turn
   }
 
@@ -158,5 +167,6 @@ module.exports = {
   onReset,
   onUpdateGameState,
   onCreateGame,
-  checkForWin
+  checkForWin,
+  onGameOver
 }
