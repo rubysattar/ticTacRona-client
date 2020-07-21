@@ -30,11 +30,15 @@ const tellPlayerTheyWon = function (player) {
 const tellPlayerTiedGame = function () {
   $('#game-end-message').text('The game is tied!')
 }
+const tellPlayerHowManyGames = function () {
+  $('#number-of-games-played').text('You have played ' + gamesPlayed + 'games')
+}
 module.exports = {
   gameStartFailure,
   gameStartSuccess,
   updateWins,
   updateDraws,
   tellPlayerTheyWon,
-  tellPlayerTiedGame
+  tellPlayerTiedGame,
+  tellPlayerHowManyGames
 }

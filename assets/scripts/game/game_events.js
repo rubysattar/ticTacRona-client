@@ -47,7 +47,7 @@ const onReset = function (event) {
   gameUi.gameBoard = Array.from(Array(9).keys())
   for (let i = 0; i < gameBoard.length; i++) {
     gameBoard[i].innerText = ''
-    $('#playAgain').on('click', createNewGame)
+    $('#playAgain').on('click', gameApi.createNewGame)
   }
 }
 

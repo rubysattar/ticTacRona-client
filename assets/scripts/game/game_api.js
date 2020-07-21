@@ -14,7 +14,9 @@ const createNewGame = function () {
   })
 }
 
-const gameOver = function () {
+// games played should GET all games played
+// this is important so that we can tellPlayerHowManyGames (ui)
+const gamesPlayed = function () {
   return $.ajax({
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -53,5 +55,5 @@ const patchGame = function (index, value, over) {
 module.exports = {
   createNewGame,
   patchGame,
-  gameOver
+  gamesPlayed
 }
