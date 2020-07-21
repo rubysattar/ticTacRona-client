@@ -9,6 +9,7 @@ const { createNewGame } = require('./game_api')
 
 let gameBoard
 
+// these are the data-cell-indices of winning combinations
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -20,7 +21,7 @@ const winningCombos = [
   [6, 4, 2]
 ]
 
-const cells = document.querySelectorAll('.cell')
+const gameBoard = document.querySelectorAll('.cell')
 
 let turn = true
 let wins = 0
@@ -45,8 +46,8 @@ const onReset = function (event) {
   event.preventDefault()
   document.querySelector('.endGame').getElementsByClassName.display = 'none'
   gameUi.gameBoard = Array.from(Array(9).keys())
-  for (let i = 0; i < cells.length; i++) {
-    cells[i].innerText = ''
+  for (let i = 0; i < gameBoard.length; i++) {
+    gameBoard[i].innerText = ''
     $('#playAgain').on('click', createNewGame)
   }
 }
@@ -61,21 +62,50 @@ const onUpdateGameState = function (clickEvent) {
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
   if (clickEvent.target.innerText === '') {
-  clickEvent.target.innerText = player
-  gameApi.patchGame(cellIndex, player, false)
-    .then()
-    .catch()
+    clickEvent.target.innerText = player
+    gameApi.patchGame(cellIndex, player, false)
+      .then()
+      .catch()
     turn = !turn
   }
   // need to come up with game logic for game over
 
-  // if (checkWin(player === true)) {
-  //   wins++
-  //   $('#endgameMessage').text('Congrats! you won the game!')
-  //   $('.score-for-x').innerText(wins)
+  // checkWin function will be called here
+    const hasWon = checkForWin(player)
 
     return turn
   }
+
+// I have a winningCombos array I want to use to check for wins
+const checkForWin = function (player) {
+  // REMEMBER FOR-OF = ARRAYS, FOR-IN = OBJECTS
+  for (const winningCombo of winningCombos) {
+  // each winning combo has only 3 max positions
+    const firstWinningPosition = winningCombo[0]
+    const secondWinningPosition = winningCombo[1]
+    const thirdWinningPosition = winningCombo[2]
+
+  // now let's see if player's cell values match the winning combos
+  // we want to go to the gameBoard at that position
+  // the left side is a variable that will store the value at the winning gameBoard position
+    const cellZeroValue = gameBoard[firstWinningPosition].innerText
+    const cellOneValue = gameBoard[secondWinningPosition].innerText
+    const cellTwoValue = gameBoard[thirdWinningPosition].innerText
+
+    // now IF that winning gameboard position is EQUAL to the all three of the player's choices return TRUE
+    // because the player's choices were winning choices. 
+    if (
+      cellZeroValue === player &&
+      cellOneValue === player &&
+      cellTwoValue === player
+      ) {
+        return true
+      }
+  } 
+  // otherwise, if even one of the choices doesn't match, it's a losing play, so false
+  // we went through all possible winning positions and the condition wasn't met
+  return false
+}
 
 // This is one way to check for winner.. is incomplete
 
@@ -109,10 +139,13 @@ const onUpdateGameState = function (clickEvent) {
 //   }
 // }
 
+// already have winning combos, could instead do a for loop
+
+
+
 module.exports = {
   onReset,
   onUpdateGameState,
   onCreateGame,
-  winningCombos
-  // checkWin
+  checkForWin
 }
