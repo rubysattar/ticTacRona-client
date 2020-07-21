@@ -21,7 +21,7 @@ const onSignIn = function (event) {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then((response) => {
-      console.log({response})
+      // console.log({response})
       store.user = response.user
     })
     .then(ui.signInSuccess)

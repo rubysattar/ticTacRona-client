@@ -1,10 +1,9 @@
 'use strict'
 const store = require('../store')
 
-let gameBoard
+const gameBoard = document.querySelectorAll('.cell')
 
-
-const cells = document.querySelectorAll('.cell')
+let wins = 0
 
 const gameStartFailure = function (errorMessage) {
   if (errorMessage) {
@@ -16,9 +15,18 @@ const gameStartFailure = function (errorMessage) {
 const gameStartSuccess = function () {
   $('#message').text('Game started successfully!')
 }
+
+const updateWins = function () {
+  const wins = $('#wins')
+  
+}
+const updateDraws = function() {
+  $('#draws').text()
+}
 module.exports = {
-  gameBoard,
   gameStartFailure,
   gameStartSuccess,
-  cells
+  updateWins,
+  updateDraws
+
 }

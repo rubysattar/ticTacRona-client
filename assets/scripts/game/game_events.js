@@ -27,14 +27,14 @@ let wins = 0
 const onCreateGame = function () {
   gameApi.createNewGame()
   .then(newGame => {
-	// console.log({newGame})
-  gameUi.gameStartSuccess()
-  store.game = newGame.game
+	 // console.log({newGame})
+    gameUi.gameStartSuccess()
+    store.game = newGame.game
   })
   .catch(error => {
-	// console.error(error.responseText)
-	const errorMessage = error.responseText
-	gameUi.gameStartFailure(errorMessage)
+	 // console.error(error.responseText)
+	 const errorMessage = error.responseText
+	 gameUi.gameStartFailure(errorMessage)
   })
 }
 
@@ -56,6 +56,9 @@ const onGameOver = function () {
     .then()
     .catch()
 }
+const isGameBoardFull = function () {
+  // loop through gameBoard and check each cell to see if it has anything in it
+}
 
 // a function to log every move a player makes
 // updateGame should be called every time a move is made
@@ -70,26 +73,42 @@ const onUpdateGameState = function (clickEvent) {
   if (clickEvent.target.innerText === '') {
     clickEvent.target.innerText = player
 
-    // now update the game
-
-    // need to come up with game logic for game over
-
     // checkForWin function will be called here
     const hasWon = checkForWin(player)
 
-    gameApi.patchGame(cellIndex, player, hasWon)
+    // players should not be able to select any other cell if there is a win
+    if (hasWon === true) {
 
+    }
+
+    // check for game over if the board is full/tie game
+    if (isGameBoardFull === true) {
+    // display a tie game message
+    }
+
+    gameApi.patchGame(cellIndex, player, hasWon)
       .then(updatedGame => {
-        console.log(updatedGame)
+        if (updatedGame.game.over === true) {
+          
+          // update scoreboard
+          wins++
+          $('#wins').text('Congratulations, ' + player + ' you won the game!')
+          
+            // gameUi.updateWins()
+          // show play again button
+
+        } else {
+          // insert everything you want to happen when game is not over
+          store.game = updatedGame.game
+          turn = !turn
+          return turn
+        }
       })
-      .catch()
-    turn = !turn
-  }
-  // There should be an IF statement here that only allows you to change turns
-  // if the game is NOT over
-  // If the game IS over, then return turn
-    return turn
-  }
+      .catch(error => {
+        // console.log(error)
+      }
+    }  
+}
 
 // I have a winningCombos array I want to use to check for wins
 const checkForWin = function (player) {
