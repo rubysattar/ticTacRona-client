@@ -23,6 +23,7 @@ const gameBoard = document.querySelectorAll('.cell')
 
 let turn = true
 let wins = 0
+let gameIsOver = false
 
 const onCreateGame = function () {
   gameApi.createNewGame()
@@ -58,6 +59,15 @@ const onGameOver = function () {
 }
 const isGameBoardFull = function () {
   // loop through gameBoard and check each cell to see if it has anything in it
+  for (const cell of gameBoard) {
+    // loop to see if you come across even one empty cell, then you know isGameBoardFull
+    // will be false. an empty cell has .innertext === ''
+    const cellValue = cell.innerText
+    if (cellValue === "") {
+      return false
+    }
+  }
+  return true
 }
 
 // a function to log every move a player makes
@@ -65,37 +75,49 @@ const isGameBoardFull = function () {
 // will store that move in store.game
 // and add an 'x' or 'o' to the game object
 const onUpdateGameState = function (clickEvent) {
+  // check global variable to see if we can start having something happen (OR NOT HAPPEN)
+  // when it's true
+  if (gameIsOver === true) {
+    return
+  }
+
   const cellIndex = clickEvent.currentTarget.dataset.cellIndex
   // player is a variable, which holds a ternary operator that changes
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
 
+  let valueOfCellTheyClicked = clickEvent.target.innerText
+
   if (clickEvent.target.innerText === '') {
+    // here, we are changing the DOM. The innertext of the square clicked to either X or O
     clickEvent.target.innerText = player
 
-    // checkForWin function will be called here
+    // variable to check if there's a winner
     const hasWon = checkForWin(player)
 
-    // players should not be able to select any other cell if there is a win
     if (hasWon === true) {
-
+      gameIsOver = true
     }
 
+    const gameBoardIsFull = isGameBoardFull() 
     // check for game over if the board is full/tie game
-    if (isGameBoardFull === true) {
-    // display a tie game message
+    if (gameBoardIsFull === true) {
+      gameIsOver = true
     }
 
-    gameApi.patchGame(cellIndex, player, hasWon)
+    gameApi.patchGame(cellIndex, player, gameIsOver)
       .then(updatedGame => {
         if (updatedGame.game.over === true) {
-          
+          // players should not be able to select any other cell if there is a win
           // update scoreboard
           wins++
           $('#wins').text('Congratulations, ' + player + ' you won the game!')
-          
-            // gameUi.updateWins()
-          // show play again button
+
+        // handle if game ended because there was a winner vs. because the game board is full.
+
+        // gameUi.updateWins()
+
+        // show play again button
 
         } else {
           // insert everything you want to happen when game is not over
@@ -104,10 +126,11 @@ const onUpdateGameState = function (clickEvent) {
           return turn
         }
       })
+      // eslint-disable-next-line handle-callback-err
       .catch(error => {
         // console.log(error)
-      }
-    }  
+      })
+  }
 }
 
 // I have a winningCombos array I want to use to check for wins
