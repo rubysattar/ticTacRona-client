@@ -23,10 +23,18 @@ const updateWins = function () {
 const updateDraws = function() {
   $('#draws').text()
 }
+
+const tellPlayerTheyWon = function (player) {
+  $('#game-end-message').text('Congratulations, ' + player + ' you won the game!')
+}
+const tellPlayerTiedGame = function () {
+  $('#game-end-message').text('The game is tied!')
+}
 module.exports = {
   gameStartFailure,
   gameStartSuccess,
   updateWins,
-  updateDraws
-
+  updateDraws,
+  tellPlayerTheyWon,
+  tellPlayerTiedGame
 }

@@ -97,12 +97,14 @@ const onUpdateGameState = function (clickEvent) {
 
     if (hasWon === true) {
       gameIsOver = true
+      gameUi.tellPlayerTheyWon(player)
     }
 
     const gameBoardIsFull = isGameBoardFull() 
     // check for game over if the board is full/tie game
     if (gameBoardIsFull === true) {
       gameIsOver = true
+      gameUi.tellPlayerTiedGame()
     }
 
     gameApi.patchGame(cellIndex, player, gameIsOver)
@@ -111,7 +113,6 @@ const onUpdateGameState = function (clickEvent) {
           // players should not be able to select any other cell if there is a win
           // update scoreboard
           wins++
-          $('#wins').text('Congratulations, ' + player + ' you won the game!')
 
         // handle if game ended because there was a winner vs. because the game board is full.
 
