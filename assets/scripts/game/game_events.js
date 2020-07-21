@@ -139,8 +139,6 @@ const checkForWin = function (player) {
 
 // already have winning combos, could instead do a for loop
 
-
-
 module.exports = {
   onReset,
   onUpdateGameState,
