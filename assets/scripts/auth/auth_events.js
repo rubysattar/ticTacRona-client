@@ -26,7 +26,6 @@ const onSignIn = function (event) {
     })
     .then(ui.signInSuccess)
     .then(gameEvents.onCreateGame)
-    .then(gameEvents.onGetGameCount)
   // the game should be created at this point
     .catch(error => {
       const errorMessage = error.responseJSON.message

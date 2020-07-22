@@ -46,6 +46,7 @@ const onCreateGame = function () {
     store.game = newGame.game
     gameIsOver = false
   })
+  .then(onGetGameCount)
   .catch(error => {
 	 // console.error(error.responseText)
 	 const errorMessage = error.responseText
