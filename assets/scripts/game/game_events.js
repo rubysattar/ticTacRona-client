@@ -25,12 +25,26 @@ let turn = true
 let wins = 0
 let gameIsOver = false
 
+const onGetGameCount = function () {
+  gameApi.gamesPlayed()
+    .then(overGames => {
+      const gamesPlayed = overGames.games.length
+      // we have our length number
+      // game ui function to display # of games played
+      gameUi.tellPlayerHowManyGames(gamesPlayed)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+}
+
 const onCreateGame = function () {
   gameApi.createNewGame()
   .then(newGame => {
 	 // console.log({newGame})
     gameUi.gameStartSuccess()
     store.game = newGame.game
+    gameIsOver = false
   })
   .catch(error => {
 	 // console.error(error.responseText)
@@ -47,7 +61,6 @@ const onReset = function (event) {
   gameUi.gameBoard = Array.from(Array(9).keys())
   for (let i = 0; i < gameBoard.length; i++) {
     gameBoard[i].innerText = ''
-    $('#playAgain').on('click', gameApi.createNewGame)
   }
 }
 
@@ -110,16 +123,8 @@ const onUpdateGameState = function (clickEvent) {
     gameApi.patchGame(cellIndex, player, gameIsOver)
       .then(updatedGame => {
         if (updatedGame.game.over === true) {
-          // players should not be able to select any other cell if there is a win
-          // update scoreboard
-          wins++
-
-        // handle if game ended because there was a winner vs. because the game board is full.
-
-        // gameUi.updateWins()
-
         // show play again button
-
+        gameUi.showPlayAgainButton()
         } else {
           // insert everything you want to happen when game is not over
           store.game = updatedGame.game
@@ -219,5 +224,6 @@ module.exports = {
   onUpdateGameState,
   onCreateGame,
   checkForWin,
-  onGameOver
+  onGameOver,
+  onGetGameCount
 }

@@ -22,5 +22,5 @@ $(() => {
   $('.scoreboard').hide()
   $('.endGame').on('click', gameEvents.onReset)
   $('.cell').on('click', gameEvents.onUpdateGameState)
-  // $('#updateGame').on('submit', gameEvents.onUpdateGame)
+  $('#playAgain').on('click', gameEvents.onCreateGame)
 })

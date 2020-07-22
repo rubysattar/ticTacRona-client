@@ -20,18 +20,20 @@ const onSignIn = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   api.signIn(formData)
-    .then((response) => {
+    .then((userInfo) => {
       // console.log({response})
-      store.user = response.user
+      store.user = userInfo.user
     })
     .then(ui.signInSuccess)
     .then(gameEvents.onCreateGame)
+    .then(gameEvents.onGetGameCount)
   // the game should be created at this point
     .catch(error => {
       const errorMessage = error.responseJSON.message
       ui.signInFailure(errorMessage)
     })
 }
+
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target

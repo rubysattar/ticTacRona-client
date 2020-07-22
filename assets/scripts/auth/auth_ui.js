@@ -16,7 +16,6 @@ const signInSuccess = function (response) {
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('#gameBoard').show()
-  $('.endGame').show()
   $('.scoreboard').show()
 }
 const signInFailure = function (errorMessage) {

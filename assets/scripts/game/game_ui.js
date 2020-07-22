@@ -31,8 +31,12 @@ const tellPlayerTiedGame = function () {
   $('#game-end-message').text('The game is tied!')
 }
 const tellPlayerHowManyGames = function (gamesPlayed) {
-  $('#number-of-games-played').text('You have played ' + gamesPlayed + 'games')
+  $('#number-of-games-played').text('You have played ' + gamesPlayed + ' games')
 }
+const showPlayAgainButton = function () {
+  $('.endGame').show()
+}
+
 module.exports = {
   gameStartFailure,
   gameStartSuccess,
@@ -40,5 +44,6 @@ module.exports = {
   updateDraws,
   tellPlayerTheyWon,
   tellPlayerTiedGame,
-  tellPlayerHowManyGames
+  tellPlayerHowManyGames,
+  showPlayAgainButton
 }
