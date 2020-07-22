@@ -14,6 +14,7 @@ const gameStartFailure = function (errorMessage) {
 }
 const gameStartSuccess = function () {
   $('#message').text('Game started successfully!')
+  $('.endGame').hide()
 }
 
 const updateWins = function () {
