@@ -171,55 +171,6 @@ const checkForWin = function (player) {
   return false
 }
 
-// This is one way to check for winner.. is incomplete
-
-  // function checkWin(gameBoard, player) {
-  //   let plays = gameBoard.reduce((a, e, i) =>
-  //   (e === player)) ? a.concat(i) : a, []);
-  //   let gameWon = null
-  // }
-
-// This is a giant if else statement to check for winner
-
-// const checkWin = function (hasText) {
-//   if ($('.m3').text(hasText) &&
-//       $('.m1').text(hasText) &&
-//       $('.m2').text(hasText)) {
-// //   return true
-// //   } else if ($('.t1').text(hasText) &&
-//       $('.t2').text(hasText) &&
-//       $('.t3').text(hasText)) {
-// //   return true
-// //   } else if ($('.b1').text(hasText) &&
-//       $('.b2').text(hasText) &&
-//       $('.b3').text(hasText)) {
-// //   return true
-// //   } else if ($('.t1').text(hasText) &&
-//       $('.m1').text(hasText) &&
-//       $('.b1').text(hasText)) {
-// //   return true
-// //   } else if ($('.t2').text(hasText) &&
-//       $('.m2').text(hasText) &&
-//       $('.b2').text(hasText)) {
-// //   return true
-// //   } else if ($('.t3').text(hasText) &&
-//       $('.m3').text(hasText) &&
-//       $('.b3').text(hasText)) {
-// //   return true
-// //   } else if ($('.t1').text(hasText) &&
-//       $('.m2').text(hasText) &&
-//       $('.b3').text(hasText)) {
-// //   return true
-// //   } else if ($('.b1').text(hasText) &&
-//       $('.m2').text(hasText) &&
-//       $('.t3').text(hasText)) {
-//   return true
-//   } else {
-//   return false
-//   }
-// }
-
-
 module.exports = {
   onReset,
   onUpdateGameState,
