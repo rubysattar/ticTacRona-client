@@ -5,6 +5,8 @@ const gameBoard = document.querySelectorAll('.cell')
 
 let wins = 0
 
+// change pw and sign out should not show BEFORE signed in
+
 const gameStartFailure = function (errorMessage) {
   if (errorMessage) {
     $('#message').text(`Game start failed. Reason: ${errorMessage}`)
