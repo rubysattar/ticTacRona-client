@@ -28,7 +28,7 @@
             <button type="submit">Sign in!</button>
           </form>
         </div>
-        <div id="authenticated"><div id="authenticated"><div id="authenticated"></div>
+        <div id="authenticated">
           <form id="change-password"> Want to change your password?
             <input name="passwords[old]" type="password" placeholder="Old password">
             <input name="passwords[new]" type="password" placeholder="New password">
@@ -36,11 +36,13 @@
           </form>
 
           <form id= "sign-out">
-            <button type="submit">Sign out!</button>
+            <button id="sign-out-button" type="submit">Sign out!</button>
           </form>
         </div>
       </header>
         <!-- end of authentication forms and messaging -->
+      <!-- Here is the game board! -->
+      <div id="gameBoard">
 
         <div class="intro">
           <h1>Tic-Tac-'Rona!'</h1>
@@ -55,8 +57,7 @@
         <div id="number-of-games-played"></div>
         <div id="game-end-message"></div>
 
-      <!-- Here is the game board! -->
-      <div id="gameBoard">
+
         <div class="container">
           <div class="row one">
             <div class="col-sm-4 cell" id="t1" data-cell-index='0' data-cell-value=''>

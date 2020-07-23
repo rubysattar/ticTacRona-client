@@ -22,7 +22,6 @@ const winningCombos = [
 const gameBoard = document.querySelectorAll('.cell')
 
 let turn = true
-let wins = 0
 let gameIsOver = false
 
 const onGetGameCount = function () {
@@ -100,7 +99,7 @@ const onUpdateGameState = function (clickEvent) {
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
 
-  let valueOfCellTheyClicked = clickEvent.target.innerText
+  // let valueOfCellTheyClicked = clickEvent.target.innerText
 
   if (clickEvent.target.innerText === '') {
     // here, we are changing the DOM. The innertext of the square clicked to either X or O
