@@ -27,6 +27,6 @@
 - I'd also like to include an option for users to select a character, such as hand sanitizer, lysol wipes, or a face mask. 
 
 ## My technologies/languages
-jquery, json, bootstrap, sass css
+jquery, json, bootstrap, sass css, javascript, html
 
 
