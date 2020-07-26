@@ -23,4 +23,7 @@ $(() => {
   $('.endGame').on('click', gameEvents.onReset)
   $('.cell').on('click', gameEvents.onUpdateGameState)
   $('#playAgain').on('click', gameEvents.onCreateGame)
+
+  // css gameBoard
+  $('.cell').css('background', 'transparent')
 })

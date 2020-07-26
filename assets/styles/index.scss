@@ -1,10 +1,66 @@
 @import '~bootstrap/scss/bootstrap';
-.cell {
-    border: 2px solid #333;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
+body {
+    background-color: #D4EFDF;
+    display: flex;
 }
 
+header {
+    // this is all of the auth forms
+    float: left;
+    clear: right;
+    overflow: hidden;
+    background-color: #A9DFBF;
+    // position: fixed;
+    top: 0;
+    // width: 100%;
+}
+
+.board {
+    margin: auto;
+    // height: 100%;
+    background: url('public/coronavirus.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: calc(100vh - 75px);
+    max-width: calc(100vh - 75px);
+}
+.container {
+    height: 100vh;
+}
+
+.cell {
+    // add a solid black line to the right of each cell, so we have lines between columns
+    border-right: 2px solid #333;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: calc(100% / 3);
+    max-width: calc(100% / 3);
+    min-height: calc(100% / 3);
+    min-width: calc(100% / 3);
+
+    background-color: white;
+    color: white;
+
+    text-shadow: 2px 2px rgba (0, 0, 0, .25);
+    font-size: 15vh;
+    user-select: none;
+
+    &:hover {
+        background-color: lightgreen;
+    }
+
+    cursor: pointer;
+
+    // selected the 3 right boxes and nth child selected elements based on their position
+    // 3n selects every 3rd 'cell'
+    &:nth-child(3n) {
+        border-right: 0;
+    }
+// select the last 3 elements
+    &:nth-last-child(-1n + 3){
+        border-bottom: 0;
+    }
+}
