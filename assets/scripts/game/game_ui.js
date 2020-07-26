@@ -13,10 +13,21 @@ const gameStartFailure = function (errorMessage) {
   } else {
     $('#message').text('Game start failed.')
   }
+  $('#start-over').hide()
 }
 const gameStartSuccess = function () {
   $('#message').text('Game started successfully!')
   $('.endGame').hide()
+  $('#start-over').show()
+}
+
+const startOverSuccess = function () {
+  $('#message').text('Lucky you! You can start over!')
+  $('#start-over').trigger('reset')
+}
+
+const startOverFailure = function () {
+  $('#message').text('Could not start the game over.')
 }
 
 const updateWins = function () {
@@ -48,5 +59,8 @@ module.exports = {
   tellPlayerTheyWon,
   tellPlayerTiedGame,
   tellPlayerHowManyGames,
-  showPlayAgainButton
+  showPlayAgainButton,
+  gameBoard,
+  startOverSuccess,
+  startOverFailure
 }
