@@ -64,16 +64,6 @@ const onReset = function (event) {
   }
 }
 
-const startOver = function () {
-  event.preventDefault()
-  gameUi.gameBoard = Array.from(Array(9).keys())
-  for (let i = 0; i < gameBoard.length; i++) {
-    gameBoard[i].innerText = ''
-  }
-    // .then(gameUi.startOverSuccess)
-    // .catch(gameUi.startOverFailure)
-}
-
 const onGameOver = function () {
   event.preventDefault()
   gameApi.gameOver()
@@ -186,6 +176,5 @@ module.exports = {
   onCreateGame,
   checkForWin,
   onGameOver,
-  onGetGameCount,
-  startOver
+  onGetGameCount
 }
