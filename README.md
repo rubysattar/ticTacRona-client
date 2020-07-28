@@ -8,6 +8,7 @@
 - As a signed-in user, I must be able to start a tic tac-toe game
 - When playing as a user, I must start as X and rotate between X and O
 - When playing as a user, I want to select available spaces on the board
+- If signing out while a game is still in progress, I'd like to see a modal ask me if I'm sure I want to sign out/lose game progress. 
 
 ## My wireframes
 - [Final expected view of authenticated gameplay](https://imgur.com/5Eg8wci)
