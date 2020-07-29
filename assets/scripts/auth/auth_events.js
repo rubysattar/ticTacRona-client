@@ -4,10 +4,6 @@ const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./auth_ui')
 const store = require('../store')
 const gameEvents = require('../game/game_events')
-const gameUi = require('../game/game_ui')
-
-const signOutButton = document.getElementById('sign-out-button')
-const gameBoard = document.getElementById('gameBoard')
 
 const onSignUp = function (event) {
   event.preventDefault()

@@ -18,9 +18,9 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
 
   // Game listeners
-  $('.endGame').hide()
+  $('#playAgain').hide()
   $('.scoreboard').hide()
-  $('.endGame').on('click', gameEvents.onReset)
+  // $('#playAgain').on('click', gameEvents.onReset)
   $('.cell').on('click', gameEvents.onUpdateGameState)
   $('#playAgain').on('click', gameEvents.onCreateGame)
 

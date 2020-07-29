@@ -2,10 +2,8 @@
 /* eslint-disable indent */
 'use strict'
 const gameApi = require('./game_api')
-const getFormFields = require('../../../lib/get-form-fields')
 const gameUi = require('./game_ui')
 const store = require('../store')
-const { createNewGame } = require('./game_api')
 
 // these are the data-cell-indices of winning combinations
 const winningCombos = [
@@ -38,45 +36,32 @@ const onGetGameCount = function () {
 }
 
 const onCreateGame = function () {
-  gameApi.createNewGame()
-  .then(newGame => {
-	 // console.log({newGame})
-    gameUi.gameStartSuccess()
-    store.game = newGame.game
-    gameIsOver = false
-  })
-  .then(onGetGameCount)
-  .catch(error => {
-	 // console.error(error.responseText)
-	 const errorMessage = error.responseText
-	 gameUi.gameStartFailure(errorMessage)
-  })
-}
-
-const onReset = function (event) {
-  // make sure this button doesn't JUST clear the board
-  // it should also post a new game to be tracked
-  event.preventDefault()
-  document.querySelector('.endGame').getElementsByClassName.display = 'none'
-  gameUi.gameBoard = Array.from(Array(9).keys())
-  for (let i = 0; i < gameBoard.length; i++) {
-    gameBoard[i].innerText = ''
+  if (isGameBoardFull() === true) {
+    gameIsOver = true
   }
+  gameApi.createNewGame()
+    .then(newGame => {
+      // console.log({newGame})
+      gameUi.gameStartSuccess()
+      store.game = newGame.game
+      gameIsOver = false
+    })
+    .then(onGetGameCount)
+    .catch(error => {
+      // console.error(error.responseText)
+      const errorMessage = error.responseText
+      gameUi.gameStartFailure(errorMessage)
+    })
 }
 
-const onGameOver = function () {
-  event.preventDefault()
-  gameApi.gameOver()
-    .then()
-    .catch()
-}
+
 const isGameBoardFull = function () {
   // loop through gameBoard and check each cell to see if it has anything in it
   for (const cell of gameBoard) {
     // loop to see if you come across even one empty cell, then you know isGameBoardFull
     // will be false. an empty cell has .innertext === ''
     const cellValue = cell.innerText
-    if (cellValue === "") {
+    if (cellValue === '') {
       return false
     }
   }
@@ -171,10 +156,8 @@ const checkForWin = function (player) {
 }
 
 module.exports = {
-  onReset,
   onUpdateGameState,
   onCreateGame,
   checkForWin,
-  onGameOver,
   onGetGameCount
 }

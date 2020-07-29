@@ -16,16 +16,26 @@ const gameStartFailure = function (errorMessage) {
 }
 const gameStartSuccess = function () {
   $('#message').text('Game started successfully!')
-  $('.endGame').hide()
+  $('#playAgain').hide()
+  onReset()
 }
 
-const updateWins = function () {
-  const wins = $('#wins')
-  
+const onReset = function () {
+  // make sure this button doesn't JUST clear the board
+  // it should also post a new game to be tracked
+  for (let cell of gameBoard) {
+    cell.innerText = ''
+  }
 }
-const updateDraws = function() {
-  $('#draws').text()
-}
+
+// two function below for future scoreboard
+
+// const updateWins = function () {
+//   const wins = $('#wins')
+// }
+// const updateDraws = function() {
+//   $('#draws').text()
+// }
 
 const tellPlayerTheyWon = function (player) {
   $('#game-end-message').text('Congratulations, ' + player + ' you won the game!')
@@ -37,16 +47,15 @@ const tellPlayerHowManyGames = function (gamesPlayed) {
   $('#number-of-games-played').text('You have played ' + gamesPlayed + ' games')
 }
 const showPlayAgainButton = function () {
-  $('.endGame').show()
+  $('#playAgain').show()
 }
 
 module.exports = {
   gameStartFailure,
   gameStartSuccess,
-  updateWins,
-  updateDraws,
   tellPlayerTheyWon,
   tellPlayerTiedGame,
   tellPlayerHowManyGames,
-  showPlayAgainButton
+  showPlayAgainButton,
+  onReset
 }
