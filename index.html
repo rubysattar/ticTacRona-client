@@ -13,10 +13,10 @@
     </head>
     <body>
       <!-- authentication forms and messaging -->
-      <header>
-        <div class="container-fluid">
+      
+        <div class="container-fluid auth">
           <p id="message"></p>
-          <div id="unauthenticated">
+          <div id="unauthenticated" class="container-fluid">
             <form id= "sign-up"> New to this game? Sign up to save your stats!
               <input name="credentials[email]" type="email" placeholder= "Your email">
               <input name="credentials[password]" type="password" placeholder="Password">
@@ -29,7 +29,7 @@
               <button type="submit">Sign in!</button>
             </form>
           </div>
-          <div id="authenticated">
+          <div id="authenticated" class="container-fluid">
             <form id="change-password"> Want to change your password?
               <input name="passwords[old]" type="password" placeholder="Old password">
               <input name="passwords[new]" type="password" placeholder="New password">
@@ -41,9 +41,9 @@
             </form>
           </div>
         </div>
-      </header>
+      
         <!-- end of authentication forms and messaging -->
-
+    <main>
       <div class="container" id="landing-page">
         <h1 id="landing-page-title">Tic-Tac-'Rona</h1>
         <h2 id="landing-page-text">Let's see what you've got against the Coronavirus!</h2>
@@ -55,17 +55,18 @@
 
         <div class="intro">
           <h1>Tic-Tac-'Rona!'</h1>
-          <h1 id="rulesHeading">How to Play</h1>
-          <p>In a classic game of tic-tac-toe, players take turns marking up a game board with X's or O's. The goal is to have three of your matching marks in a row, in order to win against the opposing player. Let's see what you've got against the Novel Coronavirus!</p>
+          <h2 id="rulesHeading">How to Play</h2>
+          <h3>In a classic game of tic-tac-toe, players take turns marking up a game board with X's or O's. The goal is to have three of your matching marks in a row, in order to win against the opposing player. Let's see what you've got against the Novel Coronavirus!</h3>
         </div>
-
+        
         <div class="scoreboard">
           <div id="wins"></div>
           <div id="draws"></div>
         </div>
         <div id="number-of-games-played"></div>
         <div id="game-end-message"></div>
-
+        
+        <button id="playAgain" type="reset">Play Again!</button>
 
         <section class="container">
           <div class="row h-100 board">
@@ -83,11 +84,8 @@
           </div>
         </section>
       </div>
+    </main>
       <!-- Game board ends here -->
-      <div class="endGame">
         <!-- reset button will need to refresh game -->
-        <p id="endgameMessage"></p>
-        <button id="playAgain" type="reset">Play Again!</button>
-      </div>
     </body>
 </html>
