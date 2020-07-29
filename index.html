@@ -14,7 +14,7 @@
     <body>
       <!-- authentication forms and messaging -->
       <header>
-        <nav>
+        <div class="container-fluid">
           <p id="message"></p>
           <div id="unauthenticated">
             <form id= "sign-up"> New to this game? Sign up to save your stats!
@@ -23,7 +23,7 @@
               <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
               <button type="submit">Sign up!</button>
             </form>
-            <form id= "sign-in"> Already signed up? Access your stats and play a new game!
+            <form id= "sign-in"> Already signed up? Start a new game!
               <input name="credentials[email]" type="email" placeholder= "Your email">
               <input name="credentials[password]" type="password" placeholder="Password">
               <button type="submit">Sign in!</button>
@@ -40,11 +40,11 @@
               <button id="sign-out-button" type="submit">Sign out!</button>
             </form>
           </div>
-        </nav>
+        </div>
       </header>
         <!-- end of authentication forms and messaging -->
 
-      <div id="landing-page">
+      <div class="container" id="landing-page">
         <h1 id="landing-page-title">Tic-Tac-'Rona</h1>
         <h2 id="landing-page-text">Let's see what you've got against the Coronavirus!</h2>
       </div>
@@ -69,17 +69,17 @@
 
         <section class="container">
           <div class="row h-100 board">
-            <div class="col-sm-4 cell" id="t1" data-cell-index='0' data-cell-value=''></div>
-            <div class="col-sm-4 cell" id="t2" data-cell-index='1' data-cell-value=''></div>
-            <div class="col-sm-4 cell" id="t3" data-cell-index='2' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="t1" data-cell-index='0' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="t2" data-cell-index='1' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="t3" data-cell-index='2' data-cell-value=''></div>
 
-            <div class="col-sm-4 cell" id="m1" data-cell-index='3' data-cell-value=''></div>
-            <div class="col-sm-4 cell" id="m2" data-cell-index='4' data-cell-value=''></div>
-            <div class="col-sm-4 cell" id="m3" data-cell-index='5' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="m1" data-cell-index='3' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="m2" data-cell-index='4' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="m3" data-cell-index='5' data-cell-value=''></div>
           
-            <div class="col-sm-4 cell" id="b1" data-cell-index='6' data-cell-value=''></div>
-            <div class="col-sm-4 cell" id="b2" data-cell-index='7' data-cell-value=''></div>
-            <div class="col-sm-4 cell" id="b3" data-cell-index='8' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="b1" data-cell-index='6' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="b2" data-cell-index='7' data-cell-value=''></div>
+            <div class="col-sm-4 col-md-4 cell" id="b3" data-cell-index='8' data-cell-value=''></div>
           </div>
         </section>
       </div>

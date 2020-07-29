@@ -6,12 +6,12 @@ body {
 
 header {
     // this is all of the auth forms
-    float: left;
-    clear: right;
+    // float: left;
+    // clear: right;
     overflow: hidden;
     background-color: #A9DFBF;
     // position: fixed;
-    top: 0;
+    // top: 0;
     // width: 100%;
 }
 
@@ -63,4 +63,17 @@ header {
     &:nth-last-child(-1n + 3){
         border-bottom: 0;
     }
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: #006400;
+    box-shadow: #006400;
+    border-radius: inherit;
+    width: min-content;
 }
