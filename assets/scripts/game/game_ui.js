@@ -9,13 +9,13 @@ let wins = 0
 
 const gameStartFailure = function (errorMessage) {
   if (errorMessage) {
-    $('#message').text(`Game start failed. Reason: ${errorMessage}`)
+    $('#game-end-message').text(`Game start failed. Reason: ${errorMessage}`)
   } else {
-    $('#message').text('Game start failed.')
+    $('#game-end-message').text('Game start failed.')
   }
 }
 const gameStartSuccess = function () {
-  $('#message').text('Game started successfully!')
+  $('#game-end-message').text('Game started successfully!')
   $('#playAgain').hide()
   onReset()
 }

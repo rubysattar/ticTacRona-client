@@ -13,7 +13,7 @@ h1 {
     text-shadow: 2px 2px #006400;
 }
 
-h2, h3, h4{
+h2, h3, h4, p {
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
     padding: 10px;
     color: white;
@@ -36,7 +36,6 @@ main {
     // clear: right;
     // overflow: hidden;
     display: flex;
-    flex-direction: row;
     // background: url('public/tp.jpg');
     background-size: contain;
     background-repeat: no-repeat;
