@@ -13,16 +13,10 @@ h1 {
     text-shadow: 2px 2px #006400;
 }
 
-h2 {
+h2, h3, h4{
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
     padding: 10px;
     color: white;
-    text-shadow: 2px 2px #006400;
-}
-
-h3 {
-    font-family: 'Gloria Hallelujah', cursive, sans-serif;
-    padding: 10px;
     text-shadow: 2px 2px #006400;
 }
 
@@ -43,6 +37,10 @@ main {
     // overflow: hidden;
     display: flex;
     flex-direction: row;
+    // background: url('public/tp.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
     background-color: #6B8E23;
     font-family: 'Rock Salt', cursive, sans-serif;
     border-style: outset;

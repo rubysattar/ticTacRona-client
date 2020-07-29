@@ -17,20 +17,23 @@
         <div class="container-fluid auth">
           <p id="message"></p>
           <div id="unauthenticated" class="container-fluid">
-            <form id= "sign-up"> New to this game? Sign up to save your stats!
+            <form id= "sign-up">
+              <h4>New to this game? Sign up to save your stats!</h4>
               <input name="credentials[email]" type="email" placeholder= "Your email">
               <input name="credentials[password]" type="password" placeholder="Password">
               <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
               <button type="submit">Sign up!</button>
             </form>
-            <form id= "sign-in"> Already signed up? Start a new game!
+            <form id= "sign-in"> 
+              <h4>Already signed up? Start a new game!</h4>
               <input name="credentials[email]" type="email" placeholder= "Your email">
               <input name="credentials[password]" type="password" placeholder="Password">
               <button type="submit">Sign in!</button>
             </form>
           </div>
           <div id="authenticated" class="container-fluid">
-            <form id="change-password"> Want to change your password?
+            <form id="change-password">
+              <h4> Want to change your password?</h4>
               <input name="passwords[old]" type="password" placeholder="Old password">
               <input name="passwords[new]" type="password" placeholder="New password">
               <button type="submit">Change Password!</button>
