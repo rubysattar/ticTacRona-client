@@ -43,7 +43,7 @@ const changePasswordFailure = function () {
   $('form').trigger('reset')
 }
 const changePasswordSuccess = function (response) {
-  $('#message').text('Successfully changed your password! You can change again or scroll down and start playing!')
+  $('#message').text('Successfully changed your password! You can change it again or scroll down and start playing!')
   $('form').trigger('reset')
 }
 const signOutSuccess = function () {

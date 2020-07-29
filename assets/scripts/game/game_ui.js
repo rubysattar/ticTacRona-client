@@ -48,6 +48,10 @@ const tellPlayerHowManyGames = function (gamesPlayed) {
 }
 const showPlayAgainButton = function () {
   $('#playAgain').show()
+  $('#play-again-message').text(`Press "Play Again" or "Sign Out"`)
+}
+const tellPlayerSpotTaken = function () {
+  $('#game-end-message').text('Whoops! That spot is taken!')
 }
 
 module.exports = {
@@ -57,5 +61,6 @@ module.exports = {
   tellPlayerTiedGame,
   tellPlayerHowManyGames,
   showPlayAgainButton,
-  onReset
+  onReset,
+  tellPlayerSpotTaken
 }
