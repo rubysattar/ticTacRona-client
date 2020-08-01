@@ -78,14 +78,17 @@ const onUpdateGameState = function (clickEvent) {
   if (gameIsOver === true) {
     return
   }
-
+  
   const cellIndex = clickEvent.currentTarget.dataset.cellIndex
   // player is a variable, which holds a ternary operator that changes
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
-
+  
+  if ((player === true && clickEvent.currentTarget.innerText === 'O') || (player === false && clickEvent.currentTarget.innerText === 'X')) {
+    gameUi.tellPlayerSpotTaken()
+  }
   // let valueOfCellTheyClicked = clickEvent.target.innerText
-
+  
   if (clickEvent.target.innerText === '') {
     // here, we are changing the DOM. The innertext of the square clicked to either X or O
     clickEvent.target.innerText = player
@@ -98,9 +101,9 @@ const onUpdateGameState = function (clickEvent) {
       gameUi.tellPlayerTheyWon(player)
     }
 
-    const gameBoardIsFull = isGameBoardFull() 
+    const gameBoardIsFull = isGameBoardFull()
     // check for game over if the board is full/tie game
-    if (gameBoardIsFull === true) {
+    if (gameBoardIsFull === true && hasWon === false) {
       gameIsOver = true
       gameUi.tellPlayerTiedGame()
     }
