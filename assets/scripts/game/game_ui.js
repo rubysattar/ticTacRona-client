@@ -3,10 +3,6 @@ const store = require('../store')
 
 const gameBoard = document.querySelectorAll('.cell')
 
-let wins = 0
-
-// change pw and sign out should not show BEFORE signed in
-
 const gameStartFailure = function (errorMessage) {
   if (errorMessage) {
     $('#game-end-message').text(`Game start failed. Reason: ${errorMessage}`)
@@ -17,6 +13,7 @@ const gameStartFailure = function (errorMessage) {
 const gameStartSuccess = function () {
   $('#game-end-message').text('Game started successfully!')
   $('#playAgain').hide()
+  $('#play-again-message').hide()
   onReset()
 }
 

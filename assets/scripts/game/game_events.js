@@ -84,9 +84,12 @@ const onUpdateGameState = function (clickEvent) {
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
   
-  if ((player === true && clickEvent.currentTarget.innerText === 'O') || (player === false && clickEvent.currentTarget.innerText === 'X')) {
+    if ((player === 'X' && clickEvent.currentTarget.innerText === 'O') || (player === 'O' && clickEvent.currentTarget.innerText === 'X')) {
     gameUi.tellPlayerSpotTaken()
-  }
+    } else {
+      $('#game-end-message').text('')
+    }
+  
   // let valueOfCellTheyClicked = clickEvent.target.innerText
   
   if (clickEvent.target.innerText === '') {
