@@ -1,7 +1,6 @@
 'use strict'
 const config = require('../config')
 const store = require('../store')
-const gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const createNewGame = function () {
   return $.ajax({

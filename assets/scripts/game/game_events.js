@@ -54,7 +54,6 @@ const onCreateGame = function () {
     })
 }
 
-
 const isGameBoardFull = function () {
   // loop through gameBoard and check each cell to see if it has anything in it
   for (const cell of gameBoard) {
@@ -78,20 +77,20 @@ const onUpdateGameState = function (clickEvent) {
   if (gameIsOver === true) {
     return
   }
-  
+
   const cellIndex = clickEvent.currentTarget.dataset.cellIndex
   // player is a variable, which holds a ternary operator that changes
   // the player depending on the turn. Turn is a boolean. If it's true(x) or false(o)
   const player = turn ? 'X' : 'O'
-  
+
     if ((player === 'X' && clickEvent.currentTarget.innerText === 'O') || (player === 'O' && clickEvent.currentTarget.innerText === 'X')) {
     gameUi.tellPlayerSpotTaken()
     } else {
       $('#game-end-message').text('')
     }
-  
+
   // let valueOfCellTheyClicked = clickEvent.target.innerText
-  
+
   if (clickEvent.target.innerText === '') {
     // here, we are changing the DOM. The innertext of the square clicked to either X or O
     clickEvent.target.innerText = player
@@ -147,7 +146,7 @@ const checkForWin = function (player) {
     const cellTwoValue = gameBoard[thirdWinningPosition].innerText
 
     // now IF that winning gameboard position is EQUAL to the all three of the player's choices return TRUE
-    // because the player's choices were winning choices. 
+    // because the player's choices were winning choices.
     if (
       cellZeroValue === player &&
       cellOneValue === player &&
@@ -155,7 +154,7 @@ const checkForWin = function (player) {
       ) {
         return true
       }
-  } 
+  }
   // otherwise, if even one of the choices doesn't match, it's a losing play, so false
   // we went through all possible winning positions and the condition wasn't met
   return false

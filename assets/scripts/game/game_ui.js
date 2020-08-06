@@ -1,5 +1,4 @@
 'use strict'
-const store = require('../store')
 
 const gameBoard = document.querySelectorAll('.cell')
 
@@ -20,7 +19,7 @@ const gameStartSuccess = function () {
 const onReset = function () {
   // make sure this button doesn't JUST clear the board
   // it should also post a new game to be tracked
-  for (let cell of gameBoard) {
+  for (const cell of gameBoard) {
     cell.innerText = ''
   }
 }
@@ -45,7 +44,7 @@ const tellPlayerHowManyGames = function (gamesPlayed) {
 }
 const showPlayAgainButton = function () {
   $('#playAgain').show()
-  $('#play-again-message').text(`Press "Play Again" or "Sign Out"`)
+  $('#play-again-message').text('Press "Play Again" or "Sign Out"')
 }
 const tellPlayerSpotTaken = function () {
   $('#game-end-message').text('Whoops! That spot is taken!')

@@ -17,7 +17,6 @@ const signUpFailure = function (response) {
 }
 
 const signInSuccess = function (response) {
-
   // I can have the board clear here after signing in again successfully
   $('#message').text('Sign-in was successful!')
   $('form').trigger('reset')
