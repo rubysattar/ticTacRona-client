@@ -26,7 +26,7 @@ main {
     background: url('public/blackspace.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     color: whitesmoke;
 }
 
@@ -94,7 +94,7 @@ main {
     &:nth-child(3n) {
         border-right: 0;
     }
-// select the last 3 elements
+    // select the last 3 elements
     &:nth-last-child(-1n + 3){
         border-bottom: 0;
     }
@@ -125,5 +125,5 @@ button {
     background: url('public/corona-world.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }

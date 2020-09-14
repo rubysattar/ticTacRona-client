@@ -89,8 +89,6 @@ const onUpdateGameState = function (clickEvent) {
       $('#game-end-message').text('')
     }
 
-  // let valueOfCellTheyClicked = clickEvent.target.innerText
-
   if (clickEvent.target.innerText === '') {
     // here, we are changing the DOM. The innertext of the square clicked to either X or O
     clickEvent.target.innerText = player
